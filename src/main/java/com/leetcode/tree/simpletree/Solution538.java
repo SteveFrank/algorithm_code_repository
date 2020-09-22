@@ -15,7 +15,8 @@ public class Solution538 {
     int sum = 0;
 
     /**
-     * 5,2,13
+     *   2
+     * 5  13
      */
     public TreeNode bstToGst(TreeNode root) {
         if (root != null) {
