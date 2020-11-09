@@ -1,6 +1,4 @@
-package com.leetcode.book.middle;
-
-import java.util.Map;
+package com.leetcode.book.middle.array;
 
 /**
  * @author yangqian

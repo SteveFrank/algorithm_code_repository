@@ -1,8 +1,6 @@
-package com.leetcode.book.middle;
+package com.leetcode.book.middle.array;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**

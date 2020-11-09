@@ -1,4 +1,4 @@
-package com.leetcode.book.middle;
+package com.leetcode.book.middle.array;
 
 /**
  * @author yangqian
