@@ -1,4 +1,4 @@
-package com.leetcode.book.middle.dp;
+package com.leetcode.book.primary.dp;
 
 /**
  * @author yangqian
