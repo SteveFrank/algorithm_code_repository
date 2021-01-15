@@ -1,6 +1,10 @@
-package com.algorithm.lesson.simple01.sparse;
+package com.algorithm.lesson.dataStruct.sparse;
 
 /**
+ *
+ * 稀疏数组
+ *  => 压缩与还原
+ *
  * @author yangqian
  * @date 2021/1/15
  */

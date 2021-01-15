@@ -5,4 +5,4 @@
  * @author yangqian
  * @date 2021/1/15
  */
-package com.algorithm.lesson.simple01;
+package com.algorithm.lesson.dataStruct;
