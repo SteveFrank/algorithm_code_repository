@@ -32,6 +32,11 @@ public class SingleLinkedListDemo {
         singleLinkedList.update(newHeroNode);
         System.out.println("修改后链表的情况~~");
         singleLinkedList.list();
+
+        singleLinkedList.delete(hero1);
+        singleLinkedList.delete(hero4);
+        System.out.println("删除后链表的情况~~");
+        singleLinkedList.list();
     }
 
 }
@@ -93,6 +98,28 @@ class SingleLinkedList {
         } else {
             // 没有找到
             System.out.println("没有找到需要修改的节点");
+        }
+    }
+
+    /**
+     * 删除节点
+     */
+    public void delete(HeroNode node) {
+        HeroNode temp = head;
+        boolean flag = false;
+        while (true) {
+            if (temp == null) {
+                break;
+            }
+            if (temp.next.no == node.no) {
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if (flag) {
+            temp.next = temp.next.next;
+            System.out.println("删除成功");
         }
     }
 
