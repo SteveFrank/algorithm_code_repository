@@ -13,11 +13,17 @@ public class SingleLinkedListDemo {
         HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
 
         SingleLinkedList singleLinkedList = new SingleLinkedList();
+        // 正常加入
+//        singleLinkedList.add(hero1);
+//        singleLinkedList.add(hero4);
+//        singleLinkedList.add(hero2);
+//        singleLinkedList.add(hero3);
 
-        singleLinkedList.add(hero1);
-        singleLinkedList.add(hero4);
-        singleLinkedList.add(hero2);
-        singleLinkedList.add(hero3);
+        // 按照顺序加入
+        singleLinkedList.addByOrder(hero1);
+        singleLinkedList.addByOrder(hero4);
+        singleLinkedList.addByOrder(hero2);
+        singleLinkedList.addByOrder(hero3);
 
         System.out.println("原来链表的情况~~");
         singleLinkedList.list();
@@ -66,6 +72,41 @@ class SingleLinkedList {
             temp = temp.next;
         }
         System.out.println(temp);
+    }
+
+    /**
+     * 第二种方式在添加英雄的时候，根据排名添加到指定位置
+     * @param heroNode
+     */
+    public void addByOrder(HeroNode heroNode) {
+        HeroNode temp = head;
+        // 标志添加的编号是否存在，默认false
+        boolean flag = false;
+        while (true) {
+            if (temp.next == null) {
+                // 说明temp在链表的最后
+                break;
+            }
+            if (temp.next.no > heroNode.no) {
+                // 找temp下一个位置的值与需要添加的值进行比较
+                // 在temp的后面进行添加
+                break;
+            } else if (temp.next.no == head.no) {
+                // 说明编号存在
+                flag = true;
+                break;
+            }
+            // 后移，用于遍历当前的链表
+            temp = temp.next;
+        }
+        if (flag) {
+            System.out.println("准备插入的英雄编号已经存在不能够加入");
+        } else {
+            // 插入到链表中, temp的后面
+            heroNode.next = temp.next;
+            temp.next = heroNode;
+            System.out.println("添加成功");
+        }
     }
 }
 
