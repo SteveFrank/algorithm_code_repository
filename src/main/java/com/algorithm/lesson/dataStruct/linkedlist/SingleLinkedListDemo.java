@@ -3,6 +3,9 @@ package com.algorithm.lesson.dataStruct.linkedlist;
 import java.util.Stack;
 
 /**
+ * 单向链表
+ *  => 顺序添加, 删除节点, 倒数第K个元素
+ *
  * @author yangqian
  * @date 2021/1/15
  */
@@ -49,7 +52,7 @@ public class SingleLinkedListDemo {
         System.out.println();
 
 //        reverseHead(SingleLinkedList.head);
-//
+
 //        singleLinkedList.list();
 
         reversePrint(SingleLinkedList.head);

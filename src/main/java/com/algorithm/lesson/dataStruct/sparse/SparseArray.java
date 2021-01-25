@@ -1,7 +1,8 @@
 package com.algorithm.lesson.dataStruct.sparse;
 
 /**
- *
+ * 数组
+ *  => 二维数组
  * 稀疏数组
  *  => 压缩与还原
  *
@@ -15,7 +16,7 @@ public class SparseArray {
         // 创建一个原始的二维数组 11 * 11
         // 0：标识没有棋子，1：表示黑子，2：标识白字
 
-        int chessArr1[][] = new int[11][11];
+        int[][] chessArr1 = new int[11][11];
         chessArr1[1][2] = 1;
         chessArr1[2][3] = 2;
         chessArr1[4][5] = 2;
@@ -43,7 +44,7 @@ public class SparseArray {
         System.out.printf("2、非零总数为 : %d\n", sum);
 
         // 2、创建对应的稀疏数组
-        int sparseArr[][] = new int[sum + 1][3];
+        int[][] sparseArr = new int[sum + 1][3];
         // 给稀疏数组赋值
         // 第一行：基础信息，多少行多少列，多少非0的值
         sparseArr[0][0] = 11;
@@ -64,8 +65,8 @@ public class SparseArray {
         }
         System.out.println();
         System.out.println("3、得到的稀疏数组为:");
-        for (int i = 0; i < sparseArr.length; i++) {
-            System.out.printf("%d\t%d\t%d\t", sparseArr[i][0], sparseArr[i][1], sparseArr[i][2]);
+        for (int[] value : sparseArr) {
+            System.out.printf("%d\t%d\t%d\t", value[0], value[1], value[2]);
             System.out.println();
         }
         System.out.println();
@@ -77,7 +78,7 @@ public class SparseArray {
 		 */
 
         // 1、先读取稀疏数组的第一行，根据第一行的数据，创建原始的二维数组
-        int chessArr2[][] = new int[sparseArr[0][0]][sparseArr[0][1]];
+        int[][] chessArr2 = new int[sparseArr[0][0]][sparseArr[0][1]];
         // 2、在读取稀疏数组后几行的数据赋值给原数组
         for (int i = 1; i < sparseArr.length; i++) {
             chessArr2[sparseArr[i][0]][sparseArr[i][1]] = sparseArr[i][2];
@@ -85,8 +86,8 @@ public class SparseArray {
         // 输出还原后的数组
         System.out.println("4、还原后的数组:");
         for (int[] ints : chessArr2) {
-            for (int i = 0; i < ints.length; i++) {
-                System.out.printf("%d\t", ints[i]);
+            for (int anInt : ints) {
+                System.out.printf("%d\t", anInt);
             }
             System.out.println();
         }
