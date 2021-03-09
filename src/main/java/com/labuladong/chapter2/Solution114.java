@@ -16,25 +16,25 @@ public class Solution114 {
             return;
         }
 
+        // 先处理左子树
         flatten(root.left);
-
+        // 再处理右子树
         flatten(root.right);
 
-        // 后序遍历位置
-        // 1、左右子树拉平成为一条链表
-        TreeNode left = root.left;
+        // 后续遍历
         TreeNode right = root.right;
+        TreeNode left = root.left;
 
-        // 2、将左子树的节点放到右子树上
+        // 将左子树的节点移到右子树
         root.left = null;
         root.right = left;
 
-        // 3、循环节点 将原本的右子树放到当前的右子树的节点
         TreeNode p = root;
         while (p.right != null) {
             p = p.right;
         }
         p.right = right;
+
     }
 
 }
