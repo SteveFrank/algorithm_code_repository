@@ -2,6 +2,9 @@ package com.labuladong.chapter2;
 
 
 /**
+ *
+ * 利用前序遍历和中序遍历还原一个二叉树
+ *
  * @author yangqian
  * @date 2021/3/9
  */
