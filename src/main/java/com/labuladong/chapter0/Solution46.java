@@ -10,7 +10,9 @@ import java.util.List;
 public class Solution46 {
 
     public static void main(String[] args) {
-
+        Solution46 solution46 = new Solution46();
+        solution46.permute(new int[]{1, 2, 3});
+        System.out.println(solution46.res);
     }
 
     List<List<Integer>> res = new LinkedList<>();
