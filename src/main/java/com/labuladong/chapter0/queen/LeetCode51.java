@@ -1,7 +1,6 @@
 package com.labuladong.chapter0.queen;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,6 +15,7 @@ public class LeetCode51 {
     public static void main(String[] args) {
 
     }
+
 
     List<List<String>> res = new ArrayList<>();
 
