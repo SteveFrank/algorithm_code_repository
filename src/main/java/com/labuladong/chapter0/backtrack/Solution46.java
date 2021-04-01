@@ -1,4 +1,4 @@
-package com.labuladong.chapter0;
+package com.labuladong.chapter0.backtrack;
 
 import java.util.LinkedList;
 import java.util.List;

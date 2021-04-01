@@ -1,4 +1,4 @@
-package com.labuladong.chapter0;
+package com.labuladong.chapter0.bfs;
 
 import java.util.*;
 
