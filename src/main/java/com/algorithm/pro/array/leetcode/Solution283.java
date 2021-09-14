@@ -31,6 +31,26 @@ public class Solution283 {
         }
     }
 
+    /**
+     * 快慢指针，在一次循环中完成操作
+     */
+    public static void moveZeroes_1(int[] nums) {
+        if (nums == null || nums.length < 2) {
+            return;
+        }
+        // 定义两个指针
+        int i = 0;
+        int j = 0;
+        for (; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
+                j ++;
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
     }
