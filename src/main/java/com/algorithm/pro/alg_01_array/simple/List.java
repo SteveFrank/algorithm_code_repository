@@ -1,4 +1,4 @@
-package com.algorithm.pro.array.simple;
+package com.algorithm.pro.alg_01_array.simple;
 
 /**
  * @author frankq

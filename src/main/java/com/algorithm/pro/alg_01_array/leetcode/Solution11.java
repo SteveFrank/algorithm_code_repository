@@ -1,4 +1,4 @@
-package com.algorithm.pro.array.leetcode;
+package com.algorithm.pro.alg_01_array.leetcode;
 
 /**
  * LeetCode
