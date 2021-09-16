@@ -7,7 +7,8 @@ package com.algorithm.pro.alg_04_stack.simple;
 public class StackTest {
 
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>();
+//        Stack<Integer> stack = new Stack<>();
+        LinkedListStack<Integer> stack = new LinkedListStack();
         stack.push(10);
         stack.push(20);
         stack.push(30);
