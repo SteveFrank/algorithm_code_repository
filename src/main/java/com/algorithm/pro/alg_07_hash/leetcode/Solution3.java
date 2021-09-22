@@ -31,7 +31,7 @@ public class Solution3 {
             }
             set.add(s.charAt(right));
             right ++;
-            max = Math.max(max, right - left);
+            max = Math.max(max, set.size());
         }
         return max;
     }
