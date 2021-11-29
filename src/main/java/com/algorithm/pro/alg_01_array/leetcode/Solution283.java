@@ -1,5 +1,7 @@
 package com.algorithm.pro.alg_01_array.leetcode;
 
+import java.util.Arrays;
+
 /**
  * LeetCode
  * https://leetcode-cn.com/problems/move-zeroes/
@@ -52,7 +54,9 @@ public class Solution283 {
     }
 
     public static void main(String[] args) {
-
+        int[] nums = new int[]{0,1,0,3,12};
+        moveZeroes_1(nums);
+        Arrays.stream(nums).forEach(System.out::print);
     }
 
 }
