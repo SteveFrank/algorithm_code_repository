@@ -31,6 +31,24 @@ public class Solution45_JumpGame {
         return steps;
     }
 
+    /**
+     * 正向
+     */
+    public int jump_start(int[] nums) {
+        int steps = 0;
+        // 定义双指针
+        int farthest = 0;
+        int nextFarthest = 0;
+        for (int i = 0; i < nums.length - 1; i ++) {
+            nextFarthest = Math.max(nextFarthest, i + nums[i]);
+            if (i == farthest) {
+                farthest = nextFarthest;
+                steps ++;
+            }
+        }
+        return steps;
+    }
+
     public static void main(String[] args) {
 
     }
