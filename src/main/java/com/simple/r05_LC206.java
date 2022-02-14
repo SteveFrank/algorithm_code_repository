@@ -30,4 +30,6 @@ public class r05_LC206 {
 class ListNode {
     int data;
     ListNode next;
+    ListNode() {}
+    ListNode(int data) { this.data = data; }
 }
