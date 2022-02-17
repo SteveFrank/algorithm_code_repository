@@ -71,11 +71,13 @@ class LRUCache {
         // 如果key存在，修改value 并且移动到末尾
         if (node != null) {
             node.value = value;
+            // 移动到链表尾
             moveToTail(node);
         } else {
             // 如果不存在 需要创建新的节点，插入到末尾
             Node newNode = new Node(key, value);
             hashMap.put(key, newNode);
+            // 添加到链表尾
             addToTail(newNode);
             size ++;
             // 如果超出了容量，需要删除链表的头节点
