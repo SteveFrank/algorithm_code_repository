@@ -50,7 +50,17 @@ public class Solution45_JumpGame {
     }
 
     public static void main(String[] args) {
-
+        int[] nums = new int[20];
+        int steps = 0;
+        int farthest = 0;
+        int nextFarthest = 0;
+        for (int i = 0; i < nums.length; i ++) {
+            nextFarthest = Math.max(farthest, i + nums[i]);
+            if (i == farthest) {
+                farthest = nextFarthest;
+                steps ++;
+            }
+        }
     }
 
 }
