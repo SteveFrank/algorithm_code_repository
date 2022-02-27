@@ -29,4 +29,29 @@ public class r07_LC141 {
         return true;
     }
 
+
+    public static boolean hasCy(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        do {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+        } while (fast != slow);
+        return true;
+    }
+
+
+
+
+
+
+
+
+
 }
