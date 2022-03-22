@@ -75,4 +75,28 @@ public class r11_LC88 {
         }
     }
 
+    public void merge_conflation(int[] nums1, int m, int[] nums2, int n) {
+        int temp[] = new int[m + n];
+        int index = 0;
+        int i = 0;
+        int j = 0;
+        while (i < m && j < n) {
+            if (nums1[i] <= nums2[j]) {
+                temp[index ++] = nums1[i ++];
+            } else {
+                temp[index ++] = nums2[j ++];
+            }
+        }
+        while (i < m) {
+            temp[index ++] = nums1[i++];
+        }
+        while(j < n) {
+            temp[index ++] = nums2[j ++];
+        }
+        for (int k = 0; k < m + n; k++) {
+            nums1[k] = temp[n];
+        }
+    }
+
+
 }

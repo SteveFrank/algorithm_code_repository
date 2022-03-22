@@ -34,6 +34,27 @@ public class r14_LC102 {
         dfs(root.right, level + 1, res);
     }
 
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+
+        return res;
+    }
+
+    public void dfs2(TreeNode root, int level, List<List<Integer>> res) {
+        if (root == null) {
+            return;
+        }
+        int size = res.size();
+        if (size - 1 < level) {
+            res.add(new ArrayList<>());
+        }
+        List<Integer> list = res.get(level);
+        list.add(root.val);
+        dfs2(root.left, level + 1, res);
+        dfs2(root.right, level + 2, res);
+    }
+
+
 }
 
 class TreeNode {

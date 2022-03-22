@@ -28,15 +28,15 @@ public class r02_BinarySearch {
     }
 
     public static int bs(int[] a, int target) {
-        int l = 0, r = a.length - 1, m = 0;
+        int l = 0, r = a.length - 1, m;
         while (l <= r) {
-            m = (l + r) >> 2;
-            if (a[m] < target) {
+            m = (l + r) / 2;
+            if (a[m] == target) {
+                return m;
+            } else if (a[m] < target) {
                 r = m - 1;
             } else if (a[m] > target) {
                 l = m + 1;
-            } else if (a[m] == target) {
-                return m;
             }
         }
         return -1;

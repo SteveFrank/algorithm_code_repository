@@ -25,6 +25,20 @@ public class r05_LC206 {
     }
 
 
+    public ListNode reverseList2(ListNode head) {
+        // 双指针处理
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev;
+    }
+
+
 }
 
 class ListNode {
