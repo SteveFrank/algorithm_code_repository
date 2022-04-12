@@ -29,7 +29,7 @@ public class r04_LC20 {
                 stack.push(')');
             } else if (c == '{') {
                 stack.push('}');
-            } else if (c == '}') {
+            } else if (c == '[') {
                 stack.push(']');
             } else if (stack.isEmpty() || c != stack.pop()) {
                 return false;
