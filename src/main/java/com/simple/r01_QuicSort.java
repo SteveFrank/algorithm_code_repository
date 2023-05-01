@@ -91,4 +91,38 @@ public class r01_QuicSort {
         return j;
     }
 
+
+    public void quick1(int[] a, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int p = partition1(a, left, right);
+        quick1(a, left, p);
+        quick1(a, p + 1, right);
+    }
+
+    public int partition1(int[] a, int left, int right) {
+        int pv = a[left];
+        int i = left;
+        int j = right;
+        while (i < j) {
+            while (i < j && pv > a[j]) {
+                j--;
+            }
+            if (i < j) {
+                a[i] = a[j];
+                i ++;
+            }
+            while (i < j && pv < a[i]) {
+                i ++;
+            }
+            if (i < j) {
+                a[j] = a[i];
+                j --;
+            }
+        }
+        a[j] = pv;
+        return j;
+    }
+
 }
