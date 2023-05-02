@@ -7,6 +7,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.CoderResult;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -50,6 +54,28 @@ public class BufferExamples {
 
         System.out.printf("%d ms \n", System.currentTimeMillis() - start);
         channel.close();
+    }
+
+    @Test
+    public void test_chinese() {
+        var raw = "长坂桥头杀气生，横枪立马眼圆睁。一声好似轰雷震，独退曹家百万兵";
+        var charset = StandardCharsets.UTF_8;
+        var bytes = charset.encode(raw).array();
+        var bytes2 = Arrays.copyOfRange(bytes, 0, 11);
+        var bbuf = ByteBuffer.allocate(12);
+        var cbuf = CharBuffer.allocate(12);
+
+        bbuf.put(bytes2);
+        bbuf.flip();
+
+        final CoderResult decode = charset.newDecoder().decode(bbuf, cbuf, true);
+        cbuf.flip();
+
+        var tmp = new char[cbuf.length()];
+        if (cbuf.hasRemaining()) {
+            cbuf.get(tmp);
+            System.out.println("here:" + new String(tmp));
+        }
     }
 
 }
